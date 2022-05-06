@@ -33,8 +33,10 @@ df_final_mean$activity <- rownames(df_final_mean)
 rownames(df_final_mean) <- NULL
 # rename columns
 colnames(df_final_mean) <- c("mean","activity")
+# melt the data in order to put the activity in the columns
+df_final_mean <- melt(df_final_mean)
 # order the columns
-df_final_mean <- df_final_mean[,c("activity","mean")]
+df_final_mean <- dcast(df_final_mean, variable ~ activity, value.var = "value")
 # write the dataset
 write.table(df_final_mean, "df_final_mean.txt", row.names = F)
 

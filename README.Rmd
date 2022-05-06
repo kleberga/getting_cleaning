@@ -1,0 +1,28 @@
+---
+title: "Description file"
+author: "User"
+date: '2022-05-06'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## How the script works
+
+This script executes the following steps:
+
+1. load the data sets of train and test;
+2. merges the two data sets;
+3. load the data set of the feature's names;
+4. filter only the feature's names which represents mean and standard deviation;
+5. filter the columns of the data set built on step 2 to get only the features selected on the previous step;
+6. assess the mean of the variables;
+7. put the name of the variables on the columns;
+8. write a .txt file.
+
+## Description of the variables
+
+The variables represent the mean and the standard deviation of the variables in the data sets of train and test.
+Moreover, after selected those variables, it was assessed the mean of the variables.
